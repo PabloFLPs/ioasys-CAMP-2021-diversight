@@ -1,0 +1,20 @@
+{
+  "name": "backend-version",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/META-EXPLOIT/backend-version.git",
+  "author": "PabloFLPs <pablofelipe1999@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0"
+  }
+}
