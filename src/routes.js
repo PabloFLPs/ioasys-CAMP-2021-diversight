@@ -29,7 +29,14 @@ routes.get('/forms', FormController.index);
 
 //Rota padrao para testar aplicacao
 routes.get('/', (req, res) => {
-  res.json({ message: `App Running on Port ${ port }!` });
+  res.json({ 
+    message: `App Running on Port ${ port }!` ,
+    routeListUsers: "/users (GET) -> lista usuarios",
+    routeRegisterUser: "/users (POST) -> registra usuario",
+    routeLoginUser: "/login -> login",
+    registerExample: "{nome: Giulia,cargo: 1,empresa: 3,email: giulia@ioasys.com,senha: admin}",
+    loginExample: "{email: marco@ioasys.com,senha: admin}"
+  });
 });
 
 module.exports = routes;
