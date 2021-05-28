@@ -1,16 +1,35 @@
 const Router = require("express");
 
 const routes = new Router();
-
-const UserController = require('./app/Controllers/UserController');
-
 const port = 3000;
 
-routes.get('/', (req, res) => {
-  res.json({ message: `App Running on Port ${ port }!` });
-});
+//Teste Cadastro Usuarios
+const UserController = require('./app/Controllers/UserController.js');
 
 routes.post('/users', UserController.store);
 routes.get('/users', UserController.index);
+
+//Teste Login Usuarios
+routes.post('/login', UserController.login);
+
+//Cadastro RH e Colaborador
+const RHController = require('./app/Controllers/RHController');
+const ColaboradorController = require('./app/Controllers/ColaboradorController');
+
+routes.post('/rh_signin', RHController.store);
+routes.get('/rh_signin', RHController.index);
+routes.post('/colaborador_signin', ColaboradorController.store);
+routes.get('/colaborador_signin', ColaboradorController.index);
+
+//Teste Cadastro Form
+const FormController = require("./app/Controllers/FormController.js");
+
+routes.post('/forms', FormController.store);
+routes.get('/forms', FormController.index);
+
+//Rota padrao para testar aplicacao
+routes.get('/', (req, res) => {
+  res.json({ message: `App Running on Port ${ port }!` });
+});
 
 module.exports = routes;
