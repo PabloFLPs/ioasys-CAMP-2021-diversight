@@ -17,4 +17,7 @@ app.get('/', (req, res) => {
 });
 */
 
-app.listen(3000);
+//app.listen(3000);
+
+//Heroku da "assign" na porta dinamicamente, entao nao podemos deixar uma porta como "padrao", a ser usada por nossa API.
+app.listen(process.env.PORT || 3000)
