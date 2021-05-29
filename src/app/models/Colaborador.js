@@ -17,6 +17,8 @@ class Colaborador extends Sequelize.Model{
         senha: Sequelize.STRING
       },
       {
+        freezeTableName: true,
+        tableName: 'colaboradores',
         sequelize
       }
     );

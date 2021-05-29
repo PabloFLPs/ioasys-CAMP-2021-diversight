@@ -5,12 +5,14 @@ class RH extends Sequelize.Model{
     super.init(
       {
         nome: Sequelize.STRING,
-        cargo: Sequelize.STRING,
-        empresa: Sequelize.STRING,
+        cargo: Sequelize.INTEGER,
+        empresa: Sequelize.INTEGER,
         email: Sequelize.STRING,
         senha: Sequelize.STRING
       },
       {
+        freezeTableName: true,
+        tableName: 'rh',
         sequelize
       }
     );

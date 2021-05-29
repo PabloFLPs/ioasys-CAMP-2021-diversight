@@ -3,7 +3,7 @@ const Router = require("express");
 const routes = new Router();
 const port = 3000;
 
-//Teste Cadastro Usuarios
+//Teste Cadastro Usuarios //////////////////////////////////////////////////////////////////////
 const UserController = require('./app/Controllers/UserController.js');
 
 routes.post('/users', UserController.store);
@@ -12,22 +12,26 @@ routes.get('/users', UserController.index);
 //Teste Login Usuarios
 routes.post('/login', UserController.login);
 
-//Cadastro RH e Colaborador
+//Cadastro RH e Colaborador ////////////////////////////////////////////////////////////////////
 const RHController = require('./app/Controllers/RHController');
 const ColaboradorController = require('./app/Controllers/ColaboradorController');
 
-routes.post('/rh_signin', RHController.store);
-routes.get('/rh_signin', RHController.index);
-routes.post('/colaborador_signin', ColaboradorController.store);
-routes.get('/colaborador_signin', ColaboradorController.index);
+routes.post('/rh_register', RHController.store);
+routes.get('/rh_register', RHController.index);
+routes.post('/colab_register', ColaboradorController.store);
+routes.get('/colab_register', ColaboradorController.index);
 
-//Teste Cadastro Form
+//Login RH e Colaborador ///////////////////////////////////////////////////////////////////////
+//routes.post('/rh_login', RHController.login);
+//routes.post('/colab_login', ColaboradorController.login);
+
+//Teste Cadastro Form //////////////////////////////////////////////////////////////////////////
 const FormController = require("./app/Controllers/FormController.js");
 
 routes.post('/forms', FormController.store);
 routes.get('/forms', FormController.index);
 
-//Rota padrao para testar aplicacao
+//Rota padrao para testar aplicacao ////////////////////////////////////////////////////////////
 routes.get('/', (req, res) => {
   res.json({ 
     routeListUsers: "/users (GET) -> lista usuarios",

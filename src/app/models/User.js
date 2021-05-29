@@ -11,6 +11,8 @@ class User extends Sequelize.Model{
         senha: Sequelize.STRING
       },
       {
+        freezeTableName: true,
+        tableName: 'users',
         sequelize
       }
     );

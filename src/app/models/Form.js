@@ -16,6 +16,8 @@ class Form extends Sequelize.Model{
         questao10: Sequelize.INTEGER
       },
       {
+        freezeTableName: true,
+        tableName: 'forms',
         sequelize
       }
     );

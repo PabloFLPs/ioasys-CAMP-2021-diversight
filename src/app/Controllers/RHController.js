@@ -11,6 +11,29 @@ class RHController{
     return res.json(rh);
   }
 
+  async login(req, res){
+    const auth = req.body;
+    const user = await User.findOne({ where: { email: auth.email } });
+
+    if (user){
+      const compare = await bcrypt.compare(user.senha, auth.senha);
+
+      bcrypt.compare(auth.senha, user.senha, function(err, result){
+        if (err){ //Handle Error
+          return res.json({ message: "Ocorreu um Erro" });
+        }
+        if (result){ //Send JWT
+          return res.json(user);
+        }
+
+        return res.json({ message: "Senha Incorreta" });
+      });
+    }
+    else{
+      return res.json({ message: "Membro RH Nao Encontrado" });
+    }
+  }
+
   async index(req, res){
     const rh = await RH.findAll();
 
