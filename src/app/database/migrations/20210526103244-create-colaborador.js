@@ -28,10 +28,10 @@ module.exports = {
         allowNull: false
       },
       data_nasc: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false
       },
-      PCD: {
+      pcd: {
         type: Sequelize.INTEGER,
         allowNull: false
       },

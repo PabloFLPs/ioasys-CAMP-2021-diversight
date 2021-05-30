@@ -13,12 +13,12 @@ class RHController{
 
   async login(req, res){
     const auth = req.body;
-    const user = await User.findOne({ where: { email: auth.email } });
+    const user = await RH.findOne({ where: { email: auth.email } });
 
     if (user){
-      const compare = await bcrypt.compare(user.senha, auth.senha);
+      //const compare = await bcrypt.compare(user.senha, auth.senha);
 
-      bcrypt.compare(auth.senha, user.senha, function(err, result){
+      await bcrypt.compare(auth.senha, user.senha, function(err, result){
         if (err){ //Handle Error
           return res.json({ message: "Ocorreu um Erro" });
         }

@@ -4,6 +4,7 @@ class Form extends Sequelize.Model{
   static init(sequelize){
     super.init(
       {
+        user_id: Sequelize.INTEGER,
         questao1: Sequelize.INTEGER,
         questao2: Sequelize.INTEGER,
         questao3: Sequelize.INTEGER,

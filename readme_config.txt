@@ -23,6 +23,8 @@ Feito isso, habilitando a conexao SSL e resolvendo o bug de "unathorized certifi
 yarn add bcrypt
 yarn add jsonwebtoken
 
+
+** Heroku **
 script start
 env port binding randonly (app.listen(process.env.PORT || 3000))
 procfile (web: node src/index.js)
