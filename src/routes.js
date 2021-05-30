@@ -34,7 +34,7 @@ routes.get('/forms', FormController.index);
 //Rota padrao para testar aplicacao ////////////////////////////////////////////////////////////
 routes.get('/', (req, res) => {
   res.json({ 
-    message: `App Running on Port ${ process.env.PORT }!`,
+    message: `App Running on Port ${ process.env.PORT }! (Only prod env)`,
     routeListUsers: "/users (GET) -> lista usuarios",
     routeRegisterUser: "/user_register (POST) -> registra usuario",
     routeLoginUser: "/user_login (POST) -> login",
