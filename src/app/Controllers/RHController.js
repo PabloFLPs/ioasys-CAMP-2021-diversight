@@ -35,7 +35,7 @@ class RHController{
   }
 
   async list(req, res){
-    const rh = await RH.findAll({ attributes: ['nome', 'cargo'] });
+    const rh = await RH.findAll({ attributes: ['nome', 'cargo', 'empresa'] });
 
     return res.json(rh);
   }

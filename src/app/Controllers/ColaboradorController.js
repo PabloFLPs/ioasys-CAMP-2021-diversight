@@ -35,7 +35,7 @@ class ColaboradorController{
   }
 
   async list(req, res){
-    const colaboradores = await Colaborador.findAll({ attributes: ['nome', 'cargo'] });
+    const colaboradores = await Colaborador.findAll({ attributes: ['nome', 'cargo', 'empresa'] });
 
     return res.json(colaboradores);
   }
