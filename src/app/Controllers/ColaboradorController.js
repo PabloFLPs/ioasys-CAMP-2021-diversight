@@ -35,7 +35,12 @@ class ColaboradorController{
   }
 
   async list(req, res){
-    const colaboradores = await Colaborador.findAll({ attributes: ['nome', 'cargo', 'empresa'] });
+    const body = req.body;
+    const colaboradores = await Colaborador.findAll({ attributes:  ['nome', 'cargo'], where: { empresa: body.empresa } });
+
+    if(!colaboradores.length){
+      return res.json({ message: "A empresa especificada nao possui usuarios cadastrados." });
+    }
 
     return res.json(colaboradores);
   }

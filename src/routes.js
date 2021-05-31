@@ -32,8 +32,8 @@ routes.post('/form_register', FormController.store);
 routes.get('/forms', FormController.index);
 
 //Listagem Frontend
-routes.get('/list_rh', RHController.list);
-routes.get('/list_colabs', ColaboradorController.list);
+routes.post('/list_rh', RHController.list);
+routes.post('/list_colabs', ColaboradorController.list);
 
 //Rota padrao para testar aplicacao ////////////////////////////////////////////////////////////
 routes.get('/', (req, res) => {

@@ -35,7 +35,12 @@ class RHController{
   }
 
   async list(req, res){
-    const rh = await RH.findAll({ attributes: ['nome', 'cargo', 'empresa'] });
+    const body = req.body;
+    const rh = await RH.findAll({ attributes:  ['nome', 'cargo'], where: { empresa: body.empresa } });
+
+    if(!rh.length){
+      return res.json({ message: "A empresa especificada nao possui membros RH cadastrados." });
+    }
 
     return res.json(rh);
   }
