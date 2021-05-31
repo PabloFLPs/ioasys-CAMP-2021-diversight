@@ -16,11 +16,11 @@ module.exports = {
         allowNull: false
       },
       cargo: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       empresa: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       email: {

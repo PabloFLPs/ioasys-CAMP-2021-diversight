@@ -5,14 +5,22 @@ class Colaborador extends Sequelize.Model{
     super.init(
       {
         nome: Sequelize.STRING,
-        raca: Sequelize.INTEGER,
-        genero: Sequelize.INTEGER,
-        orient_sex: Sequelize.INTEGER,
+        raca: Sequelize.STRING,
+        genero: Sequelize.STRING,
+        orient_sex: Sequelize.STRING,
         data_nasc: Sequelize.DATEONLY,
-        pcd: Sequelize.INTEGER,
-        empresa: Sequelize.INTEGER,
-        area_atuac: Sequelize.INTEGER,
-        cargo: Sequelize.INTEGER,
+        //PCD attributes block - START
+        pcd: Sequelize.BOOLEAN,
+        pcd_visual: Sequelize.BOOLEAN,
+        pcd_fisica: Sequelize.BOOLEAN,
+        pcd_audicao: Sequelize.BOOLEAN,
+        pcd_intelectual: Sequelize.BOOLEAN,
+        pcd_psicologica: Sequelize.BOOLEAN,
+        pcd_readaptado: Sequelize.BOOLEAN,
+        //PCD attributes block - END
+        empresa: Sequelize.STRING,
+        area_atuac: Sequelize.STRING,
+        cargo: Sequelize.STRING,
         email: Sequelize.STRING,
         senha: Sequelize.STRING
       },

@@ -16,35 +16,61 @@ module.exports = {
         allowNull: false
       },
       raca: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       genero: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       orient_sex: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       data_nasc: {
         type: Sequelize.DATEONLY,
         allowNull: false
       },
+      //PCD attributes block - START
       pcd: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.BOOLEAN,
         allowNull: false
       },
+      pcd_visual: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+      },
+      pcd_fisica: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+      },
+      pcd_audicao: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+      },
+      pcd_intelectual: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+      },
+      pcd_psicologica: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+      },
+      pcd_readaptado: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+      },
+      //PCD attributes block - END
       empresa: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       area_atuac: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       cargo: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       email: {

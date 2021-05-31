@@ -31,10 +31,14 @@ const FormController = require("./app/Controllers/FormController.js");
 routes.post('/form_register', FormController.store);
 routes.get('/forms', FormController.index);
 
+//Listagem Frontend
+routes.get('/list_rh', RHController.list);
+routes.get('/list_colabs', ColaboradorController.list);
+
 //Rota padrao para testar aplicacao ////////////////////////////////////////////////////////////
 routes.get('/', (req, res) => {
   res.json({ 
-    message: `App Running on Port ${ process.env.PORT }! (Only prod env)`,
+    message: `App Running on Port ${ process.env.PORT || port}!`,
     routeListUsers: "/users (GET) -> lista usuarios",
     routeRegisterUser: "/user_register (POST) -> registra usuario",
     routeLoginUser: "/user_login (POST) -> login",
@@ -47,7 +51,8 @@ routes.get('/', (req, res) => {
     registerExample: "{nome: Giulia,cargo: 1,empresa: 3,email: giulia@ioasys.com,senha: admin}",
     loginExample: "{email: marco@ioasys.com,senha: admin}",
     routeRegisterForm: "/form_register (POST) -> registra form",
-    routeListForm: "/forms (GET) -> lista formularios"
+    routeListForm: "/forms (GET) -> lista formularios",
+    routeListFrontend: "[GIULIA] -- /list_colabs (GET) -> lista colaboradores {nome,cargo}"
   });
 });
 

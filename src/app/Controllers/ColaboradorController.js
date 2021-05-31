@@ -3,10 +3,10 @@ const bcrypt = require('bcrypt');
 
 class ColaboradorController{
   async store(req, res){
-    const {nome, raca, genero, orient_sex, data_nasc, pcd, empresa, area_atuac, cargo, email, senha} = req.body;
+    const {nome, raca, genero, orient_sex, data_nasc, pcd, pcd_visual, pcd_fisica, pcd_audicao, pcd_intelectual, pcd_psicologica, pcd_readaptado, empresa, area_atuac, cargo, email, senha} = req.body;
     const hash = await bcrypt.hash(senha, 10);
 
-    const colaborador = await Colaborador.create({nome, raca, genero, orient_sex, data_nasc, pcd, empresa, area_atuac, cargo, email, senha: hash});
+    const colaborador = await Colaborador.create({nome, raca, genero, orient_sex, data_nasc, pcd, pcd_visual, pcd_fisica, pcd_audicao, pcd_intelectual, pcd_psicologica, pcd_readaptado, empresa, area_atuac, cargo, email, senha: hash});
 
     return res.json(colaborador);
   }
@@ -34,6 +34,12 @@ class ColaboradorController{
     }
   }
 
+  async list(req, res){
+    const colaboradores = await Colaborador.findAll({ attributes: ['nome', 'cargo'] });
+
+    return res.json(colaboradores);
+  }
+
   async index(req, res){
     const colaboradores = await Colaborador.findAll();
 
@@ -42,3 +48,9 @@ class ColaboradorController{
 }
 
 module.exports = new ColaboradorController();
+
+/*
+Model.findAll({
+  attributes: ['foo', 'bar']
+});
+*/

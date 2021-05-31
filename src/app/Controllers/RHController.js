@@ -34,6 +34,12 @@ class RHController{
     }
   }
 
+  async list(req, res){
+    const rh = await RH.findAll({ attributes: ['nome', 'cargo'] });
+
+    return res.json(rh);
+  }
+
   async index(req, res){
     const rh = await RH.findAll();
 

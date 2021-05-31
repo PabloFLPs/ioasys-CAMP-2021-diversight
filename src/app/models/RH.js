@@ -5,8 +5,8 @@ class RH extends Sequelize.Model{
     super.init(
       {
         nome: Sequelize.STRING,
-        cargo: Sequelize.INTEGER,
-        empresa: Sequelize.INTEGER,
+        cargo: Sequelize.STRING,
+        empresa: Sequelize.STRING,
         email: Sequelize.STRING,
         senha: Sequelize.STRING
       },
