@@ -52,7 +52,7 @@ routes.get('/', (req, res) => {
     loginExample: "{email: marco@ioasys.com,senha: admin}",
     routeRegisterForm: "/form_register (POST) -> registra form",
     routeListForm: "/forms (GET) -> lista formularios",
-    routeListFrontend: "[GIULIA] -- /list_colabs (GET) -> lista colaboradores {nome,cargo}"
+    routeListFrontend: "[GIULIA] -- /list_colabs (POST) -> lista colaboradores {nome,cargo} filtrados pela empresa {empresa}"
   });
 });
 
