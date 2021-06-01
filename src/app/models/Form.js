@@ -4,17 +4,10 @@ class Form extends Sequelize.Model{
   static init(sequelize){
     super.init(
       {
-        user_id: Sequelize.INTEGER,
-        questao1: Sequelize.INTEGER,
-        questao2: Sequelize.INTEGER,
-        questao3: Sequelize.INTEGER,
-        questao4: Sequelize.INTEGER,
-        questao5: Sequelize.INTEGER,
-        questao6: Sequelize.INTEGER,
-        questao7: Sequelize.INTEGER,
-        questao8: Sequelize.INTEGER,
-        questao9: Sequelize.INTEGER,
-        questao10: Sequelize.INTEGER
+        tipo: Sequelize.STRING,
+        questoes: Sequelize.JSON,
+        created_at: Sequelize.DATEONLY,
+        updated_at: Sequelize.DATEONLY
       },
       {
         freezeTableName: true,
