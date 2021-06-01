@@ -26,7 +26,7 @@ routes.post('/rh_login', RHController.login);
 routes.post('/colab_login', ColaboradorController.login);
 
 //Teste Cadastro Form //////////////////////////////////////////////////////////////////////////
-const FormController = require("./app/Controllers/FormController.js");
+const FormController = require('./app/Controllers/FormController.js');
 
 routes.post('/form_register', FormController.store);
 routes.get('/forms', FormController.index);
@@ -37,6 +37,12 @@ routes.post('/list_colabs', ColaboradorController.list);
 
 //User Data
 routes.post('/user_data', ColaboradorController.userData);
+
+//Registro Respostas
+const RespostaController = require('./app/Controllers/RespostaController.js');
+
+routes.post('/resposta_register', RespostaController.store);
+routes.get('/respostas', RespostaController.index);
 
 //Rota padrao para testar aplicacao ////////////////////////////////////////////////////////////
 routes.get('/', (req, res) => {
@@ -56,7 +62,9 @@ routes.get('/', (req, res) => {
     routeRegisterForm: "/form_register (POST) -> registra form",
     routeListForm: "/forms (GET) -> lista formularios",
     routeListFrontend: "[GIULIA] -- /list_colabs (POST) -> lista colaboradores {nome, cargo} filtrados pela empresa {empresa}",
-    routeDataUserMobile: "[OTAVIO] -- /user_data (POST) -> lista os dados dos colaboradores {empresa, raca, genero, orient_sex, pcd, pcd_visual, pcd_fisica, pcd_audicao, pcd_intelectual, pcd_psicologica, pcd_readaptado} filtrados pelo id de usuario {id}"
+    routeDataUserMobile: "[OTAVIO] -- /user_data (POST) -> lista os dados dos colaboradores {empresa, raca, genero, orient_sex, pcd, pcd_visual, pcd_fisica, pcd_audicao, pcd_intelectual, pcd_psicologica, pcd_readaptado} filtrados pelo id de usuario {id}",
+    routeRespostaRegister: "/resposta_register (POST) -> registra as respostas de um formulario",
+    routeRespostaList: "/respostas (GET) -> lista todas as respostas de formularios"
   });
 });
 

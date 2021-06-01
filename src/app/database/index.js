@@ -4,10 +4,11 @@ const User = require('../models/User');
 const RH = require('../models/RH');
 const Colaborador = require('../models/Colaborador');
 const Form = require('../models/Form');
+const Resposta = require('../models/Resposta');
 
 const databaseConfig = require('../../config/database');
 
-const models = [ User, RH, Colaborador, Form];
+const models = [ User, RH, Colaborador, Form, Resposta];
 
 class Database{
   constructor(){
