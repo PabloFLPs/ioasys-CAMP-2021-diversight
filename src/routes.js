@@ -44,6 +44,9 @@ const RespostaController = require('./app/Controllers/RespostaController.js');
 routes.post('/resposta_register', RespostaController.store);
 routes.get('/respostas', RespostaController.index);
 
+//Update Data User
+routes.post('/user_update', ColaboradorController.userUpdate);
+
 //Rota padrao para testar aplicacao ////////////////////////////////////////////////////////////
 routes.get('/', (req, res) => {
   res.json({ 
@@ -64,7 +67,8 @@ routes.get('/', (req, res) => {
     routeListFrontend: "[GIULIA] -- /list_colabs (POST) -> lista colaboradores {nome, cargo} filtrados pela empresa {empresa}",
     routeDataUserMobile: "[OTAVIO] -- /user_data (POST) -> lista os dados dos colaboradores {empresa, raca, genero, orient_sex, pcd, pcd_visual, pcd_fisica, pcd_audicao, pcd_intelectual, pcd_psicologica, pcd_readaptado} filtrados pelo id de usuario {id}",
     routeRespostaRegister: "/resposta_register (POST) -> registra as respostas de um formulario",
-    routeRespostaList: "/respostas (GET) -> lista todas as respostas de formularios"
+    routeRespostaList: "/respostas (GET) -> lista todas as respostas de formularios",
+    routeUserUpdate: "/user_update (POST) -> atualiza dados {nome, raca, genero, orient_sex, pcd, data_nasc, empresa, area_atuac, cargo} do usuario, filtrado pelo id {id}"
   });
 });
 

@@ -56,6 +56,15 @@ class ColaboradorController{
     return res.json(data);
   }
 
+  async userUpdate(req, res){
+    const user_id = req.body.id;
+    const user = await Colaborador.findOne({ where: { id: user_id } });
+
+    const new_user = await user.update(req.body);;
+    
+    return res.json(new_user);
+  }
+
   async index(req, res){
     const colaboradores = await Colaborador.findAll();
 
@@ -69,4 +78,17 @@ module.exports = new ColaboradorController();
 Model.findAll({
   attributes: ['foo', 'bar']
 });
+*/
+
+/*
+const jane = await User.create({ name: "Jane" });
+console.log(jane.name); // "Jane"
+jane.name = "Ada";
+// the name is still "Jane" in the database
+await jane.save();
+// Now the name was updated to "Ada" in the database!
+
+console.log(cody.age) // 7
+cody = await cody.update({age: 8})
+console.log(cody.age) // 8
 */

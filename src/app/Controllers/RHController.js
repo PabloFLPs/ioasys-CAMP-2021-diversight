@@ -47,6 +47,17 @@ class RHController{
   }
   */
 
+  /*
+  async RHUpdate(req, res){
+    const user_id = req.body.id;
+    const user = await Colaborador.findOne({ where: { id: user_id } });
+
+    const new_user = await user.update(req.body);;
+    
+    return res.json(new_user);
+  }
+  */
+
   async index(req, res){
     const rh = await RH.findAll();
 
