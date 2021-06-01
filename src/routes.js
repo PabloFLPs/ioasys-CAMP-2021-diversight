@@ -32,8 +32,11 @@ routes.post('/form_register', FormController.store);
 routes.get('/forms', FormController.index);
 
 //Listagem Frontend
-routes.post('/list_rh', RHController.list);
+//routes.post('/list_rh', RHController.list);
 routes.post('/list_colabs', ColaboradorController.list);
+
+//User Data
+routes.post('/user_data', ColaboradorController.userData);
 
 //Rota padrao para testar aplicacao ////////////////////////////////////////////////////////////
 routes.get('/', (req, res) => {
@@ -48,11 +51,12 @@ routes.get('/', (req, res) => {
     routeListColab: "/colabs (GET) -> lista colabs",
     routeRegisterColab: "/colab_register (POST) -> registra colab",
     routeLoginColab: "/colab_login (POST) -> login",
-    registerExample: "{nome: Giulia,cargo: 1,empresa: 3,email: giulia@ioasys.com,senha: admin}",
-    loginExample: "{email: marco@ioasys.com,senha: admin}",
+    registerExample: "{nome: Giulia, cargo: 1, empresa: 3, email: giulia@ioasys.com, senha: admin}",
+    loginExample: "{email: marco@ioasys.com, senha: admin}",
     routeRegisterForm: "/form_register (POST) -> registra form",
     routeListForm: "/forms (GET) -> lista formularios",
-    routeListFrontend: "[GIULIA] -- /list_colabs (POST) -> lista colaboradores {nome,cargo} filtrados pela empresa {empresa}"
+    routeListFrontend: "[GIULIA] -- /list_colabs (POST) -> lista colaboradores {nome, cargo} filtrados pela empresa {empresa}",
+    routeDataUserMobile: "[OTAVIO] -- /user_data (POST) -> lista os dados dos colaboradores {empresa, raca, genero, orient_sex, pcd, pcd_visual, pcd_fisica, pcd_audicao, pcd_intelectual, pcd_psicologica, pcd_readaptado} filtrados pelo id de usuario {id}"
   });
 });
 

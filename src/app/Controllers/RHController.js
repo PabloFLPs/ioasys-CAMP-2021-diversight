@@ -34,6 +34,7 @@ class RHController{
     }
   }
 
+  /*
   async list(req, res){
     const body = req.body;
     const rh = await RH.findAll({ attributes:  ['nome', 'cargo'], where: { empresa: body.empresa } });
@@ -44,6 +45,7 @@ class RHController{
 
     return res.json(rh);
   }
+  */
 
   async index(req, res){
     const rh = await RH.findAll();

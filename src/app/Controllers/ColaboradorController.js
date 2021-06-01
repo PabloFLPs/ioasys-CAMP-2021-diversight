@@ -45,6 +45,17 @@ class ColaboradorController{
     return res.json(colaboradores);
   }
 
+  async userData(req, res){
+    const body = req.body;
+    const data = await Colaborador.findAll({ attributes:  ['empresa', 'raca', 'genero', 'orient_sex', 'pcd', 'pcd_visual', 'pcd_fisica', 'pcd_audicao', 'pcd_intelectual', 'pcd_psicologica', 'pcd_readaptado'], where: { id: body.id_usuario } });
+
+    if(!data.length){
+      return res.json({ message: "A empresa especificada nao possui usuarios cadastrados." });
+    }
+
+    return res.json(data);
+  }
+
   async index(req, res){
     const colaboradores = await Colaborador.findAll();
 

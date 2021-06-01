@@ -6,8 +6,6 @@ class Form extends Sequelize.Model{
       {
         tipo: Sequelize.STRING,
         questoes: Sequelize.JSON,
-        created_at: Sequelize.DATEONLY,
-        updated_at: Sequelize.DATEONLY
       },
       {
         freezeTableName: true,
