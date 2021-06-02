@@ -76,7 +76,7 @@ routes.get('/', (req, res) => {
     routeRespostaList: "/respostas (GET) -> lista todas as respostas de formularios",
     routeUserUpdate: "/user_update (POST) -> atualiza dados {nome, raca, genero, orient_sex, pcd, data_nasc, empresa, area_atuac, cargo} do usuario, filtrado pelo id {id}",
     routeRegisterDashboard: "/dashboard_register (POST) -> registra dashboard de empresa {empresa, NPS_CR_Guia, NPS_CR, NPS_G_Guia, NPS_G, NPS_O_Guia, NPS_O, NPS_PCS_Guia, NPS_PCS, NPS_Geral_Guia, NPS_Geral}",
-    routeFilterDashboard: "/dashboard_list (POST) -> filtra e mostra dashboard por empresa {empresa}",
+    routeFilterDashboard: "/dashboard_filter (POST) -> filtra e mostra dashboard por empresa {empresa}",
     routeListDashboard: "/dashboard (GET) -> lista dashboards"
   });
 });
