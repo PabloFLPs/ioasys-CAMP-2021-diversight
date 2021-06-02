@@ -1,6 +1,9 @@
 # Backend-Version
 
 ## Plataforma Diversight - Equipe META-EXPLOIT
+
+Link da aplicacao no Heroku: https://heroku-diversight.herokuapp.com
+
 Codigo referente ao backend da aplicacao Diversight, uma plataforma de "enterprise score", para fornecer dados personalizados de formularios que visam tabelar o quao "diverso" e inclusivo, e o ambiente de trabalho da empresa.
 
 - Iniciando o projeto: ```yarn init -y```
